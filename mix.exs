@@ -1,8 +1,8 @@
-defmodule ExredisHelpers.Mixfile do
+defmodule ExRedisHelpers.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :exredis_helpers,
+    [app: :ex_redis_helpers,
      version: "0.1.0",
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
@@ -12,7 +12,7 @@ defmodule ExredisHelpers.Mixfile do
 
   def application do
     [extra_applications: [:logger],
-     mod: {ExredisHelpers.Application, []}]
+     mod: {ExRedisHelpers.Application, []}]
   end
 
   defp deps do

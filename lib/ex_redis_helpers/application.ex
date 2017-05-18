@@ -1,4 +1,4 @@
-defmodule ExredisHelpers.Application do
+defmodule ExRedisHelpers.Application do
   @moduledoc false
 
   use Application

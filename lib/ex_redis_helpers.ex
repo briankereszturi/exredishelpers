@@ -1,4 +1,4 @@
-defmodule ExredisHelpers do
+defmodule ExRedisHelpers do
   import Exredis.Api
 
   defp client(), do: Process.whereis(:redis_client)

@@ -1,6 +1,6 @@
-defmodule ExredisHelpersTest do
+defmodule ExRedisHelpersTest do
   use ExUnit.Case
-  doctest ExredisHelpers
+  doctest ExRedisHelpers
 
   test "the truth" do
     assert 1 + 1 == 2
