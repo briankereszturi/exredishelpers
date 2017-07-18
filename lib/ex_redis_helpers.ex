@@ -8,12 +8,19 @@ defmodule ExRedisHelpers do
   def del(key), do: client() |> R.del(key)
   def set(key, value), do: client() |> R.set(key, value)
 
+  defp handle_json_result(result) do
+    case result do
+      "OK" -> :ok
+      r -> r
+    end
+  end
+
   def json_get(key, path \\ "."),
-    do: client() |> E.query ["JSON.GET", key, path]
+    do: client() |> E.query ["JSON.GET", key, path] |> handle_json_result()
 
   def json_del(key, path \\ "."),
-    do: client() |> E.query ["JSON.DEL", key, path]
+    do: client() |> E.query ["JSON.DEL", key, path] |> handle_json_result()
 
   def json_set(key, path, value),
-    do: client() |> E.query ["JSON.SET", key, path, value]
+    do: client() |> E.query ["JSON.SET", key, path, value] |> handle_json_result()
 end
