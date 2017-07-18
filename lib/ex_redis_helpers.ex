@@ -16,11 +16,11 @@ defmodule ExRedisHelpers do
   end
 
   def json_get(key, path \\ "."),
-    do: client() |> E.query ["JSON.GET", key, path] |> handle_json_result()
+    do: client() |> E.query(["JSON.GET", key, path]) |> handle_json_result()
 
   def json_del(key, path \\ "."),
-    do: client() |> E.query ["JSON.DEL", key, path] |> handle_json_result()
+    do: client() |> E.query(["JSON.DEL", key, path]) |> handle_json_result()
 
   def json_set(key, path, value),
-    do: client() |> E.query ["JSON.SET", key, path, value] |> handle_json_result()
+    do: client() |> E.query(["JSON.SET", key, path, value]) |> handle_json_result()
 end
