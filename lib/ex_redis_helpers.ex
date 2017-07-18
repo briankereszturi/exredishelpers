@@ -11,7 +11,8 @@ defmodule ExRedisHelpers do
   defp handle_json_result(result) do
     case result do
       "OK" -> :ok
-      "ERR new objects must be created at the root" -> {:error, :not_found}
+      "ERR missing key at non-terminal path level" -> {:error, :invalid_path}
+      "ERR new objects must be created at the root" -> {:error, :invalid_path}
       r -> r
     end
   end
